@@ -1,7 +1,7 @@
 package com.example.hrapplication.person;
 
 public class PersonNotFoundException extends RuntimeException{
-    PersonNotFoundException(Long id) {
+    public PersonNotFoundException(Long id) {
         super("Could not find person " + id);
     }
 }
