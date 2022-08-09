@@ -1,13 +1,12 @@
 package com.example.financialapplication.persons;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Stocks {
+
+    //Define required initial variables for Stocks
     @Id
-    //@GeneratedValue
     private long stockid;
     private long pid;
     private float amount;
@@ -16,6 +15,8 @@ public class Stocks {
     private String stockcode;
     private String actiontype;
 
+
+    //Stocks Getter and Setter
     public long getStockid() {
         return stockid;
     }

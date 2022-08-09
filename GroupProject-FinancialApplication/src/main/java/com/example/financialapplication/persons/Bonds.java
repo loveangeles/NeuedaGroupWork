@@ -1,21 +1,24 @@
 package com.example.financialapplication.persons;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Bonds {
+    //Define required initial variables for Bonds
     @Id
-    //@GeneratedValue
     private long bondid;
     private long pid;
-    private String date;
     private float amount;
+    private float bondrate;
+    private float bondprice;
     private String bondtype;
     private String actiontype;
+    private String bondcode;
+    private String date;
 
+
+    //Bonds Getter and Setter
     public long getBondid() {
         return bondid;
     }
@@ -32,20 +35,28 @@ public class Bonds {
         this.pid = pid;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public float getAmount() {
         return amount;
     }
 
     public void setAmount(float amount) {
         this.amount = amount;
+    }
+
+    public float getBondrate() {
+        return bondrate;
+    }
+
+    public void setBondrate(float bondrate) {
+        this.bondrate = bondrate;
+    }
+
+    public float getBondprice() {
+        return bondprice;
+    }
+
+    public void setBondprice(float bondprice) {
+        this.bondprice = bondprice;
     }
 
     public String getBondtype() {
@@ -63,4 +74,21 @@ public class Bonds {
     public void setActiontype(String actiontype) {
         this.actiontype = actiontype;
     }
+
+    public String getBondcode() {
+        return bondcode;
+    }
+
+    public void setBondcode(String bondcode) {
+        this.bondcode = bondcode;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
+

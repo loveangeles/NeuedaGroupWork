@@ -1,23 +1,24 @@
 package com.example.financialapplication.persons;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Person {
     @Id
-    //@GeneratedValue
     private long pid;
     private String first_name;
     private String last_name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Bonds bonds;
+    //Match more same type info for same person
     @OneToMany(mappedBy = "pid",cascade = CascadeType.ALL)
-    private Set<Cash> cash;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Stocks stocks;
+    private List<Bonds> bonds;
+    @OneToMany(mappedBy = "pid",cascade = CascadeType.ALL)
+    private List<Cash> cash;
+    @OneToMany(mappedBy = "pid",cascade = CascadeType.ALL)
+    private List<Stocks> stocks;
 
+    //Person Constructor
     public Person() {
     }
 
@@ -26,6 +27,7 @@ public class Person {
         this.last_name = last_name;
     }
 
+    //Person Getter and Setter
     public long getPid() {
         return pid;
     }
@@ -50,27 +52,27 @@ public class Person {
         this.last_name = last_name;
     }
 
-    public Bonds getBonds() {
+    public List<Bonds> getBonds() {
         return bonds;
     }
 
-    public void setBonds(Bonds bonds) {
+    public void setBonds(List<Bonds> bonds) {
         this.bonds = bonds;
     }
 
-    public Set<Cash> getCash() {
+    public List<Cash> getCash() {
         return cash;
     }
 
-    public void setCash(Set<Cash> cash) {
+    public void setCash(List<Cash> cash) {
         this.cash = cash;
     }
 
-    public Stocks getStocks() {
+    public List<Stocks> getStocks() {
         return stocks;
     }
 
-    public void setStocks(Stocks stocks) {
+    public void setStocks(List<Stocks> stocks) {
         this.stocks = stocks;
     }
 }

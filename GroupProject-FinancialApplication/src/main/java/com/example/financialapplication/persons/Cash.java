@@ -1,21 +1,19 @@
 package com.example.financialapplication.persons;
-
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Cash {
 
+    //Define required initial variables for Bonds
     @Id
-    //@GeneratedValue
     private long cashid;
     private long pid;
-    private String date;
     private float amount;
+    private String date;
+    private String bankorg;
     private String actiontype;
 
+    //Cash Getter and Setter
     public long getCashid() {
         return cashid;
     }
@@ -32,6 +30,14 @@ public class Cash {
         this.pid = pid;
     }
 
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
     public String getDate() {
         return date;
     }
@@ -40,12 +46,12 @@ public class Cash {
         this.date = date;
     }
 
-    public float getAmount() {
-        return amount;
+    public String getBankorg() {
+        return bankorg;
     }
 
-    public void setAmount(float amount) {
-        this.amount = amount;
+    public void setBankorg(String bankorg) {
+        this.bankorg = bankorg;
     }
 
     public String getActiontype() {
