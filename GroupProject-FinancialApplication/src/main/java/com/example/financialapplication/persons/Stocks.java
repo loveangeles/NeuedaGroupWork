@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class Stocks {
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private long stockid;
     private long pid;
     private float amount;

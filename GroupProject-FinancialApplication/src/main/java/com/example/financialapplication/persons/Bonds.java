@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Bonds {
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private long bondid;
     private long pid;
     private String date;

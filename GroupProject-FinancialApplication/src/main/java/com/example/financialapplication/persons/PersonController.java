@@ -27,8 +27,8 @@ public class PersonController {
         cash.setCashid(2000);
         cash.setActiontype("save");
         cash.setAmount(4399);
-        cash.setDate("2022-08-09");
-        person.setCash(cash);
+        cash.setDate("2022-08-08");
+        //person.setCash(Set<cash>);
 
         Stocks stocks = new Stocks();
         stocks.setStockid(3000);
@@ -41,7 +41,7 @@ public class PersonController {
         return person;
     }
 
-    //////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     @GetMapping("personsinfo")
     public List<Person> getPersons(){
         return personRepository.findAll();

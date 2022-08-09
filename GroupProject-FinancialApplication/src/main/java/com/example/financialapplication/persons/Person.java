@@ -1,19 +1,20 @@
 package com.example.financialapplication.persons;
 
 import javax.persistence.*;
-@Entity
+import java.util.Set;
 
+@Entity
 public class Person {
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private long pid;
     private String first_name;
     private String last_name;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Bonds bonds;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Cash cash;
+    @OneToMany(mappedBy = "pid",cascade = CascadeType.ALL)
+    private Set<Cash> cash;
     @OneToOne(cascade = CascadeType.ALL)
     private Stocks stocks;
 
@@ -57,11 +58,11 @@ public class Person {
         this.bonds = bonds;
     }
 
-    public Cash getCash() {
+    public Set<Cash> getCash() {
         return cash;
     }
 
-    public void setCash(Cash cash) {
+    public void setCash(Set<Cash> cash) {
         this.cash = cash;
     }
 

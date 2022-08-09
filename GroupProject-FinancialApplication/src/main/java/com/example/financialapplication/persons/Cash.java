@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Cash {
 
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private long cashid;
     private long pid;
     private String date;
